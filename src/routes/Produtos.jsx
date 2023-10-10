@@ -1,62 +1,84 @@
 import { Link } from "react-router-dom";
-import { ListaProduto } from "../components/ListaProdutos";
-import style from "./Produtos.module.css";
-import {AiTwotoneEdit as Editar} from "react-icons/ai"
-import { useEffect, useState } from "react";
+import { AiFillEdit as EditObj } from "react-icons/ai";
+import { RiDeleteBin2Fill as DelObj } from "react-icons/ri";
+import estilos from "./Produtos.module.css";
+import { useState, useEffect } from "react";
+import ModalInserir from "../components/ModalInserir/ModalInserir";
 
 export default function Produtos() {
   document.title = "Lista de Produtos";
 
-  const[listaProdutosApi,setListaProdutosApi] = useState([]);
+  const [listaProdutosLocal, setListaProdutosLocal] = useState([{}]);
 
-  useEffect(()=>{
+  useEffect(() => {
+    //Criando o bloco de reequisição dos dados utilizando o fetch com promises:
+fetch("http://localhost:5000/produtos", {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    })
+      .then((response) => {
+        console.log("O Status da requisição/request HTTP : " + response.status);
+        return response.json()
+      })
+      .then((data) => {
+        setListaProdutosLocal(data);
+      })
+      .catch((err) => console.log(err));
+  }, []);
 
-    //Realizando o Request
-    fetch("http://localhost:5000/produtos")
-    //Recebendo o Response e transformando em json
-    .then((response)=> response.json())
-    //Exibindo os dados no console
-    .then((response)=> setListaProdutosApi(response))
-    //Exibindo caso ocorra algum erro.
-    .catch(error=> console.log(error));
-
-  },[]);
-  
+  const [open, setOpen] = useState(false);
 
   return (
-    <div>
-      <h1>Produtos</h1>
+    <>
+      <h1>Produtos Informáticos - FIAPO</h1>
 
-      <table className={style.tblEstilo}>
+      { open ? <ModalInserir open={open} setOpen={setOpen}/> : "" }
+
+      <Link onClick={()=> setOpen(true)}>Cadastrar Produtos</Link>  
+
+      <table className={estilos.tblEstilo}>
         <thead>
           <tr>
             <th>ID</th>
             <th>NOME</th>
             <th>DESCRIÇÃO</th>
             <th>PREÇO</th>
-            <th>EDITAR</th>
+            <th>IMAGEM</th>
+            <th>EDITAR/EXCLUIR</th>
           </tr>
         </thead>
 
         <tbody>
-          {listaProdutosApi.map((item, indice) => (
-            <tr key={indice} className={style.lineTbl}>
-              <td>{item.id}</td>
-              <td>{item.nome}</td>
-              <td>{item.desc}</td>
-              <td>{item.preco}</td>
-              <td><Link to={`/editar/produtos/${item.id}`}> <Editar/> </Link> </td>
+          {listaProdutosLocal.map((produto, indice) => (
+            <tr key={indice} className={estilos.tblLine}>
+              <td>{produto.id}</td>
+              <td>{produto.nome}</td>
+              <td>{produto.desc}</td>
+              <td>{produto.preco}</td>
+              <td>
+                <img src={produto.img} alt={produto.desc} />
+              </td>
+              <td>
+                {" "}
+                <Link to={`/editar/produtos/${produto.id}`}>
+                  <EditObj />
+                </Link>{" "}
+                |{" "}
+                <Link to={`/excluir/produtos/${produto.id}`}>
+                  <DelObj />
+                </Link>
+              </td>
             </tr>
           ))}
         </tbody>
         <tfoot>
           <tr>
-            <td colSpan={5}>
-              PRODUTOS INFORMÁTICOS - QTD = {ListaProduto.length}
-            </td>
+            <td colSpan={6}>PRODUTOS</td>
           </tr>
         </tfoot>
       </table>
-    </div>
+    </>
   );
 }

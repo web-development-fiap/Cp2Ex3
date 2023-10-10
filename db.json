@@ -1,7 +1,46 @@
 {
-    "produtos":[
-        {"id":1,"nome":"Teclado","desc":"Teclado Mecânico 102 Teclas.","preco":220},
-        {"id":2, "nome":"Mouse", "desc":"Mouse sem fio.", "preco":56.98},
-        {"id":3, "nome":"Monitor", "desc":"32' 75Hz", "preco":2500}
-    ]
+  "produtos": [
+    {
+      "id": 2,
+      "nome": "Mouse",
+      "desc": "Gamer",
+      "preco": 120,
+      "img": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 3,
+      "nome": "Headset",
+      "desc": "8D",
+      "preco": 550,
+      "img": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 4,
+      "nome": "Monitor",
+      "desc": "32'",
+      "preco": 1500,
+      "img": "https://picsum.photos/200/300"
+    },
+    {
+      "id": 5,
+      "nome": "Cadeira",
+      "desc": "Cadeira Gamer DxRacer",
+      "preco": 2800,
+      "img": "https://picsum.photos/200/300"
+    },
+    {
+      "nome": "Webcam",
+      "desc": "360º",
+      "preco": "348",
+      "img": "https://http2.mlstatic.com/D_NQ_NP_2X_623929-MLA52223384796_102022-F.webp",
+      "id": 6
+    },
+    {
+      "nome": "Cubo Mágico",
+      "desc": "Metálico",
+      "preco": "120",
+      "img": "https://i0.wp.com/cubizzperu.com/wp-content/uploads/2023/06/61qv-kxse8L.jpg",
+      "id": 8
+    }
+  ]
 }
