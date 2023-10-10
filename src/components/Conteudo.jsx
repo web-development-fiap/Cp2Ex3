@@ -1,32 +1,20 @@
+import reactLogo from "../assets/react.svg"
 
-export default function Conteudo() {
+export default function Conteudo(props) {
+
+    let reactLogoAlt = "React Logo";
 
   return (
     <>
-      <section>
-        <div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta
-            libero itaque voluptate reiciendis labore cumque nemo quaerat quia
-            vero quo excepturi accusantium illum tempore, repellendus, hic
-            nostrum sed facilis aliquid.
-          </p>
-          <p>
-            Tempore nihil earum suscipit odio excepturi? Similique, fugit,
-            cupiditate eum dolor voluptatem facilis pariatur eos eveniet fuga
-            porro est vero! Corrupti repellat harum ipsa quidem non fugiat atque
-            vero sit!
-          </p>
-          <p>
-            Corrupti, aut odit assumenda animi ipsam possimus unde placeat est
-            ex numquam nemo minus amet delectus adipisci nulla repellendus
-            consequuntur maiores! Nam vero delectus rerum perspiciatis
-            architecto quae beatae voluptates?
-          </p>
-          {/* <img src={reactLogo} alt={reactLogoAlt} />
-          <img src={props.viteLogoProps} alt={props.viteLogoAltProps} /> */}
-        </div>
-      </section>
+        <section>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum nam tenetur mollitia ullam numquam, animi architecto magnam maiores beatae? Quaerat nesciunt rem distinctio voluptas veritatis iure impedit omnis quia perspiciatis!</p>
+                <p>Autem voluptates laborum repellat rem, corporis ad. Earum officia vitae quibusdam doloremque repudiandae ducimus mollitia accusamus voluptatem reprehenderit quas dolorum quae, velit pariatur nulla modi assumenda iste minus aspernatur. Dicta.</p>
+                <p>Aut voluptate praesentium corporis non explicabo asperiores eos laudantium veniam fuga quidem repudiandae obcaecati illum, dicta nemo excepturi dignissimos distinctio velit cupiditate voluptatibus! Laboriosam harum, ipsa cum temporibus qui suscipit?</p>
+                <img src={reactLogo} alt={reactLogoAlt} />
+                <img src={props.viteLogoProps} alt={props.viteLogoAltProps} />
+            </div>
+        </section>
     </>
-  );
+  )
 }

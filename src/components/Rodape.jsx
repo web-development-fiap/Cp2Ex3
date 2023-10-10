@@ -14,7 +14,6 @@ export default function Rodape() {
               <a href="#">Reddit</a>
             </li>
           </ul>
-          <p>&copy; Todos os meus direitos reservados. 2023</p>
         </div>
       </footer>
     </>

@@ -1,32 +1,38 @@
-
 .cabecalho{
+
     background-color: #999;
-    font-size: 1.5rem;
+    color: #fff;
+    width: 15%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-weight: bold;
-    width: 30%;
-    border-radius: 5px;
+    font-size: 1.5rem;
 
     ul{
         list-style: none;
+        padding: 0;
 
         li a{
             text-decoration: none;
             text-align: center;
             display: block;
+            padding: 5%;
+            margin: 0.5% 0;
             color: #fff;
-            padding: 8px 16px;
-            border-radius: 5px;
-            transition: ease-out 300ms;
+            transition: 300ms ease-out;
 
             &:hover{
-                background-color:#27ae60;
+                background-color: red;
+                color: green;
+
             }
-            
         }
+
 
     }
 
     .active{
-        background-color:#27ae60;
+        background-color: #9f2;
+        color: #000;
     }
+
 }

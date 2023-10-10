@@ -1,5 +1,37 @@
-export const ListaProduto = [
-    {id:1,nome:"Teclado",desc:"Teclado Mecânico 102 Teclas.",preco:220},
-    {id:2, nome:'Mouse', desc:'Mouse sem fio.', preco:56.98},
-    {id:3, nome:'Monitor', desc:'32" 75Hz.', preco:2500},
-];
+export const ListaProdutos = [
+    {
+        id: 1,
+        nome: 'Teclado',
+        desc: 'Mecânico',
+        preco: 150,
+        img: 'https://picsum.photos/200/300'
+    },
+    {
+        id: 2,
+        nome: 'Mouse',
+        desc: 'Gamer',
+        preco: 120,
+        img: 'https://picsum.photos/200/300'
+    },
+    {
+        id: 3,
+        nome: 'Headset',
+        desc: '8D',
+        preco: 550,
+        img: 'https://picsum.photos/200/300'
+    },
+    {
+        id: 4,
+        nome: 'Monitor',
+        desc: '32"',
+        preco: 1500,
+        img: 'https://picsum.photos/200/300'
+    },
+    {
+        id: 5,
+        nome: 'Cadeira',
+        desc: 'Cadeira Gamer"',
+        preco: 2800,
+        img: 'https://picsum.photos/200/300'
+    },
+]
